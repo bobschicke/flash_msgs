@@ -7,8 +7,6 @@ app.secret_key = "My_Secret_ key"
 @app.route('/')
 def hello_world():  # put application's code here
     flash("flash test!!!!")
-    flash("fladfasdfsaassh test!!!!")
-    flash("asdfas asfsafs!!!!")
     return render_template("flash_msgs.html")
 
 
