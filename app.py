@@ -2,11 +2,11 @@ from flask import Flask, render_template, flash
 
 
 app = Flask(__name__)
-app.secret_key = "My_Secret_ key"
+app.secret_key = "My_Secret_key"
 
 @app.route('/')
-def hello_world():  # put application's code here
-    flash("flash test!!!!")
+def flash_test():  # put application's code here
+    flash("Welcome to my Flash Test!")
     return render_template("flash_msgs.html")
 
 
