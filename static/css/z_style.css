@@ -1,0 +1,161 @@
+
+
+body {
+    margin-top: 0;
+}
+header {
+    width: 40%;
+    /*float: left;*/
+    text-align: center;
+    font-size: 1.5vw;
+    position: fixed;
+    margin-top: 0;
+}
+header h1 {
+    color: ivory;
+}
+
+menu {
+    /* float: left; */
+    margin-top: 0;
+    width: 60%;
+    font-size: 1.3vw;
+    margin-left: 40%;
+    /* fixed locks the position relative to the window, so scrolling has no effect.
+    For some reason this moves the horizontal position all the way to the left??? */
+    position: fixed;
+}
+menu li {
+    display: inline-block;
+    margin-top: 2.5vw;
+    padding: .3vw;
+
+}
+menu a {
+    color: ivory;
+}
+
+menu li:hover {
+    background: gray;
+}
+
+header, menu {
+    box-sizing: border-box;
+    height: 7vw;
+    margin-bottom: 0;
+    background-color: blue;
+
+}
+
+#heading {
+    box-sizing: border-box;
+    height: 6vw;
+    width: 100%;
+    float: left;
+    text-align: center;
+    background-color: blanchedalmond;
+    font-size: 1.7vw;
+    margin-top: 7vw;
+}
+
+#heading h2 {
+    margin-top: 1vw;
+}
+
+#wrapper{
+    width: 80%;
+    min-width: 350px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: aliceblue;
+}
+
+main{
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+    margin-top: 1vw;
+    padding: .2vw;
+}
+main img {
+    width: 80%;
+    margin-right: auto;
+    margin-left: 10%;
+    border: 10px solid gray;
+}
+main h2 {
+    margin-left: 10%;
+    margin-bottom: 10px;
+}
+
+aside{
+    width:19%;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-top: .2vw;
+    margin-left: .15vw;
+    margin-right: auto;
+    vertical-align: top;
+}
+
+aside img {
+    margin: 0;
+    width: 100%;
+}
+
+aside h3 {
+    font-size: calc(8px + .8vw);
+}
+aside p {
+    font-size: 1vw;
+}
+
+aside a {
+    font-size: 1vw;
+}
+#aside1 {
+    margin-left: .5vw;
+}
+
+footer{
+    Clear: both;
+    height: 3vw;
+    background-color: lightgray;
+    font-size: 1.3vw;
+    margin-top: 2vw;
+}
+
+footer>span {
+    font-style: italic;
+    width: 32%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: inline-block;
+}
+
+button {
+    margin-top: 0.5vw;
+    font-size: 1.3vw;
+}
+
+h2 {
+    margin: 0;
+}
+h3 {
+    margin: 0;
+}
+
+/* (D) SHOW/HIDE */
+.hovermsg {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 1vw;
+}
+.hoverwrap:hover .hovermsg {
+    visibility: visible;
+    opacity: 1;
+}
+
