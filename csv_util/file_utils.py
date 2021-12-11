@@ -58,15 +58,15 @@ class Filehandler:
         Filehandler.create_calc_log(rec_num, time.time(), filename, calc_type, result)
         return result
 
-    @staticmethod
-    def do_calc_operation(tuples, operation):
-        """This method gets passed the operation and an array and calls the calc function"""
-        result = operation(tuples) # todo pass operation here ("Calculator." + operation)(row_array) see if this works
-        if isinstance(result, str):
-            print("error = " + result)
-            Filehandler.create_error_log(rec_num, time.time(), filename, calc_type, result)
-        Filehandler.create_calc_log(rec_num, time.time(), filename, calc_type, result)
-        return result
+    # @staticmethod
+    # def do_calc_operation(tuples, operation):
+    #     """This method gets passed the operation and an array and calls the calc function"""
+    #     result = operation(tuples) # todo pass operation here ("Calculator." + operation)(row_array) see if this works
+    #     if isinstance(result, str):
+    #         print("error = " + result)
+    #         Filehandler.create_error_log(rec_num, time.time(), filename, calc_type, result)
+    #     Filehandler.create_calc_log(rec_num, time.time(), filename, calc_type, result)
+    #     return result
 
 
     @staticmethod

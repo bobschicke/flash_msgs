@@ -1,4 +1,10 @@
 """ This is the Calculations class """
+from calculator.calculator import Calculator
+
+VAL1 = 0
+VAL2 = 1
+OPERATION = 2
+RESULT = 3
 
 class Calculations:
     """ This is the Calculations class"""
@@ -6,10 +12,16 @@ class Calculations:
     # calc history will save calculation objects
     calc_history = []
 
+    # @staticmethod
+    # def add_calculation_to_history(calculation):
+    #     """ Adds a calculation object to the history list"""
+    #     Calculations.calc_history.append(calculation)
+    #     return True
+
     @staticmethod
-    def add_calculation_to_history(calculation):
+    def add_calculation_to_history(val1, val2, operation):
         """ Adds a calculation object to the history list"""
-        Calculations.calc_history.append(calculation)
+        Calculations.calc_history.append([val1, val2, operation])
         return True
 
     @staticmethod
@@ -25,16 +37,28 @@ class Calculations:
     @staticmethod
     def count_history():
         """ Returns the number of calculations """
-        return len(Calculations.calc_history)
+
+    # @staticmethod
+    # def get_calc_result_history():
+    #     """ This returns a list of calculation results from oldest to newest """
+    #     result_list = []
+    #     for item in Calculations.calc_history:
+    #         result_list.append(item.get_result())
+    #         # print (result_list[-1])
+    #     return result_list
 
     @staticmethod
     def get_calc_result_history():
         """ This returns a list of calculation results from oldest to newest """
-        result_list = []
-        for item in Calculations.calc_history:
-            result_list.append(item.get_result())
-            #print (result_list[-1])
-        return result_list
+        global VAL1, VAL2, OPERATION
+        temp_list = []
+        for row in Calculations.calc_history:
+
+            temp_row = row
+            result = getattr(Calculator, row[OPERATION])([row[VAL1], row[VAL2]])
+            temp_row.append(result)
+            temp_list.append(temp_row)
+        return temp_list
 
     @staticmethod
     def clear_calc_history():

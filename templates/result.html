@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "basepage.html" %}
 {% block title %}Index{% endblock %}
 {% block head %}
     {{ super() }}
@@ -26,14 +26,19 @@
 
     {% if data %}
         <table>
+                <TR>
+                    <TD class="c0">Value 1</TD>
+                    <TD class="c1">Value 2</TD>
+                    <TD class="c2">Operation</TD>
+                    <TD class="c3">Result</TD>
+                </TR>
             {% for item in data %}
                 <!--- This will not work you have to think about it--->
                 <TR>
-                    <TD class="c1"><IMG src="favicon.ico"></TD>
-                    <TD class="c2">{{ item.date }}</TD>
-                    <TD class="c3">{{ item.id }}</TD>
-                    <TD class="c4"><SPAN>{{ item.position }}</SPAN></TD>
-                    <TD class="c5"><SPAN>{{ item.status }}</SPAN></TD>
+                    <TD class="c0">{{ item[0]}}</TD>
+                    <TD class="c1">{{ item[1] }}</TD>
+                    <TD class="c2">{{ item[2] }}</TD>
+                    <TD class="c3">{{ item[3] }}</TD>
                 </TR>
             {% endfor %}
         </table>
