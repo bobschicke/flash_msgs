@@ -51,12 +51,23 @@ class Filehandler:
     @staticmethod
     def do_calcs (rec_num, row_array, func, calc_type, filename):
         """This method gets passed the function and an array and calls the calc function"""
-        result = func(row_array) # todo pass operation here ("Calulator." + operation)(row_array) see if this works
+        result = func(row_array) # todo pass operation here ("Calculator." + operation)(row_array) see if this works
         if isinstance(result, str):
             print("error = " + result)
             Filehandler.create_error_log(rec_num, time.time(), filename, calc_type, result)
         Filehandler.create_calc_log(rec_num, time.time(), filename, calc_type, result)
         return result
+
+    @staticmethod
+    def do_calc_operation(tuples, operation):
+        """This method gets passed the operation and an array and calls the calc function"""
+        result = operation(tuples) # todo pass operation here ("Calculator." + operation)(row_array) see if this works
+        if isinstance(result, str):
+            print("error = " + result)
+            Filehandler.create_error_log(rec_num, time.time(), filename, calc_type, result)
+        Filehandler.create_calc_log(rec_num, time.time(), filename, calc_type, result)
+        return result
+
 
     @staticmethod
     def process_csv(nump_arr, filename : str):

@@ -1,7 +1,7 @@
 from history.calculations import Calculations
 from calculator.calculator import Calculator
 from flask import render_template, request, flash, redirect, url_for, session
-
+from csv_util.file_utils import Filehandler
 
 class CalculatorController:
     @staticmethod
@@ -16,7 +16,7 @@ class CalculatorController:
             my_tuple = (value1, value2)
             # this will call the correct operation
             getattr(Calculator, operation)(my_tuple) # use combined function todo
-            result = str(Calculator.get_last_result_value())
+            result = str(Calculator.get_last_result_value()) # todo
             # Hey if you copy this it will not work you need to think about it
             data = {
                 'value1': [value1],
