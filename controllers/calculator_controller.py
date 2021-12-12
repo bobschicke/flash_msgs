@@ -1,5 +1,7 @@
+import time
 from history.calculations import Calculations
 from calculator.calculator import Calculator
+from csv_util.file_utils import Filehandler
 from flask import render_template, request, flash, redirect, url_for, session
 from csv_util.file_utils import Filehandler
 
@@ -16,9 +18,15 @@ class CalculatorController:
             # make the tuple
             my_tuple = (value1, value2)
             # this will call the correct operation
-            result = getattr(Calculator, operation)(my_tuple)  # use combined function todo
-            Calculations.add_calculation_to_history(value1, value2, operation)
-            data = Calculations.get_calc_result_history()
+            result = getattr(Calculator, operation)(my_tuple)
+            Calculations.add_calculation_to_history(int(time.time()),value1, value2, operation)
+            # data = Calculations.get_calc_result_history()
+            # Need double square brackets or will get a "shape" error
+            Filehandler.write_vals_to_csv([[int(time.time()),value1, value2, operation]])
+            # Need the result!!!
+            data = Filehandler.get_csv_result_history()
+            print("data: " + str(data))
+
             len_data = len(data)
             return render_template('result.html', len_data=len_data, data=data,
                                    value1=value1, value2=value2, operation=operation, result=result)

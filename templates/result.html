@@ -9,7 +9,7 @@
         }
          .width60 {
             table-layout: fixed;
-            width: 40%;
+            width: 55%;
         }
        th:first-child {
             width: 10%;
@@ -75,6 +75,7 @@
             <thead>
             <tr>
                 <th scope="col">Record #</th>
+                <th scope="col">Unix Time Stamp</th>
                 <th scope="col">Value 1</th>
                 <th scope="col">Value 2</th>
                 <th scope="col">Operation</th>
@@ -89,6 +90,7 @@
                     <td>{{ data[i][1] }}</td>
                     <td>{{ data[i][2] }}</td>
                     <td>{{ data[i][3] }}</td>
+                    <td>{{ data[i][4] }}</td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -97,3 +99,6 @@
         </div>
     {% endif %}
 {% endblock %}
+<br>
+<br>
+<br>

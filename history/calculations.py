@@ -1,10 +1,10 @@
 """ This is the Calculations class """
 from calculator.calculator import Calculator
-
-VAL1 = 0
-VAL2 = 1
-OPERATION = 2
-RESULT = 3
+UTIME = 0
+VAL1 = 1
+VAL2 = 2
+OPERATION = 3
+RESULT = 4
 
 class Calculations:
     """ This is the Calculations class"""
@@ -19,9 +19,9 @@ class Calculations:
     #     return True
 
     @staticmethod
-    def add_calculation_to_history(val1, val2, operation):
+    def add_calculation_to_history(utime, val1, val2, operation):
         """ Adds a calculation object to the history list"""
-        Calculations.calc_history.append([val1, val2, operation])
+        Calculations.calc_history.append([utime, val1, val2, operation])
         return True
 
     @staticmethod
@@ -53,7 +53,6 @@ class Calculations:
         global VAL1, VAL2, OPERATION
         temp_list = []
         for row in Calculations.calc_history:
-
             temp_row = row
             result = getattr(Calculator, row[OPERATION])([row[VAL1], row[VAL2]])
             temp_row.append(result)
