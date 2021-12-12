@@ -9,6 +9,7 @@ class CalculatorController:
         """ Get data and post values to form """
         if request.form['value1'] != '' and request.form['value2'] != '':
             # get the values out of the form
+            # todo test for nan
             value1 = float(request.form['value1'])
             value2 = float(request.form['value2'])
             operation = request.form['operation']
@@ -17,8 +18,9 @@ class CalculatorController:
             # this will call the correct operation
             result = getattr(Calculator, operation)(my_tuple)  # use combined function todo
             Calculations.add_calculation_to_history(value1, value2, operation)
-
-            return render_template('result.html', data=Calculations.get_calc_result_history(),
+            data = Calculations.get_calc_result_history()
+            len_data = len(data)
+            return render_template('result.html', len_data=len_data, data=data,
                                    value1=value1, value2=value2, operation=operation, result=result)
 
         flash("You must enter a value for BOTH value 1 and value 2")

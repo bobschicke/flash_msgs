@@ -13,7 +13,7 @@ def flash_test():  # put application's code here
     return render_template("flash_msgs.html")
 
 
-@app.route('/internet_history')
+@app.route('/internet_history', methods=["GET"])
 def internet_history_get():
     return render_template("internet_history.html")
 

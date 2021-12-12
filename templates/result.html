@@ -2,9 +2,35 @@
 {% block title %}Calc Results{% endblock %}
 {% block head %}
     {{ super() }}
+    <style>
+        .width50 {
+            table-layout: fixed;
+            width: 20%;
+        }
+         .width60 {
+            table-layout: fixed;
+            width: 40%;
+        }
+       th:first-child {
+            width: 10%;
+        }
+        th:last-child {
+            width: 10%;
+        }
+        td {
+            font-weight: bold;
+        }
+
+        td:first-child {
+            width: 10%;
+        }
+        td:last-child {
+            width: 10%;
+        }
+    </style>
 {% endblock %}
 {% block content %}
-    <h1><strong>Calculation Result</strong></h1> <br>
+    <h2><strong>Calculation Result</strong></h2>
     <!-- Flash Messages -->
     {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -16,34 +42,58 @@
         {% endif %}
     {% endwith %}
     <!-- Print Calculation Details and Result -->
-    <h4><span class="border"><strong>Value 1: {{ value1 }} </strong> </span></h4>
-    <h4><strong>Value 2: {{ value2 }} </strong></h4>
-    <h4><strong>Operation: {{ operation }} </strong></h4>
-    <h4><strong>Result: {{ result }} </strong></h4>
+    <div class="width50">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="row">Value 1:</th>
+                <td>{{ value1 }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Value 2:</th>
+                <td>{{ value2 }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Operation:</th>
+                <td>{{ operation }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Result:</th>
+                <td>{{ value1 }}</td>
+            </tr>
 
+        </thead>
+    </table>
+    </div>
+
+    <br>
+    <br>
+    <h2><strong>History of Calculations - {{ len_data }} Entries</strong></h2>
     {% if data %}
-        <table class="table-success">
-                <TR>
-                    <TD class="table-danger">Value 1</TD>
-                    <TD class="c1">Value 2</TD>
-                    <TD class="c2">Operation</TD>
-                    <TD class="c3">Result</TD>
-                </TR>
-            {% for item in data %}
-                <TR>
-                    <TD class="table-warning">{{ item[0]}}</TD>
-                    <TD class="c1">{{ item[1] }}</TD>
-                    <TD class="c2">{{ item[2] }}</TD>
-                    <TD class="c3">{{ item[3] }}</TD>
-                </TR>
+        <div class="width60">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">Record #</th>
+                <th scope="col">Value 1</th>
+                <th scope="col">Value 2</th>
+                <th scope="col">Operation</th>
+                <th scope="col">Result</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in range (0, len_data) %}
+                <tr>
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ data[i][0] }}</td>
+                    <td>{{ data[i][1] }}</td>
+                    <td>{{ data[i][2] }}</td>
+                    <td>{{ data[i][3] }}</td>
+                </tr>
             {% endfor %}
+            </tbody>
+
         </table>
-        {% else %}
-	        <h1>There are no calculations</h1>
+        </div>
     {% endif %}
-
-
-
-
-
 {% endblock %}
