@@ -2,6 +2,7 @@
 # This is an abstract class
 # This is where we create our objects
 
+
 class Calculation:
     """ This is the Calculation class """
 

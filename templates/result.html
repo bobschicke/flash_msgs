@@ -1,15 +1,11 @@
 {% extends "basepage.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}Calc Results{% endblock %}
 {% block head %}
     {{ super() }}
-    <style type="text/css">
-        .important {
-            color: #336699;
-        }
-    </style>
 {% endblock %}
 {% block content %}
-    <h1>Calculation Result</h1>
+    <h1><strong>Calculation Result</strong></h1> <br>
+    <!-- Flash Messages -->
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
@@ -19,23 +15,23 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-    <strong>Value 1: </strong> {{ value1 }} <br>
-    <strong>Value 2: </strong> {{ value2 }} <br>
-    <strong>Operation: </strong> {{ operation }} <br>
-    <strong>Result: </strong> {{ result }}
+    <!-- Print Calculation Details and Result -->
+    <h4><span class="border"><strong>Value 1: {{ value1 }} </strong> </span></h4>
+    <h4><strong>Value 2: {{ value2 }} </strong></h4>
+    <h4><strong>Operation: {{ operation }} </strong></h4>
+    <h4><strong>Result: {{ result }} </strong></h4>
 
     {% if data %}
-        <table>
+        <table class="table-success">
                 <TR>
-                    <TD class="c0">Value 1</TD>
+                    <TD class="table-danger">Value 1</TD>
                     <TD class="c1">Value 2</TD>
                     <TD class="c2">Operation</TD>
                     <TD class="c3">Result</TD>
                 </TR>
             {% for item in data %}
-                <!--- This will not work you have to think about it--->
                 <TR>
-                    <TD class="c0">{{ item[0]}}</TD>
+                    <TD class="table-warning">{{ item[0]}}</TD>
                     <TD class="c1">{{ item[1] }}</TD>
                     <TD class="c2">{{ item[2] }}</TD>
                     <TD class="c3">{{ item[3] }}</TD>

@@ -21,6 +21,7 @@ class CalculatorController:
             return render_template('result.html', data=Calculations.get_calc_result_history(),
                                    value1=value1, value2=value2, operation=operation, result=result)
 
+        flash("You must enter a value for BOTH value 1 and value 2")
         error = 'You must enter a value for value 1 and or value 2'
         return render_template('calculator.html', error=error)
     @staticmethod

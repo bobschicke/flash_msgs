@@ -12,26 +12,12 @@
 {% block content %}
  <body>
 
-    <div class="container-fluid" style="min-height:100%; width:80%">
-	{% with messages = get_flashed_messages() %}
-	  {% if messages %}
-	    {% for message in messages %}
-		  <div class="alert alert-warning alert-dismissible" role="alert">
-		    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-			{{message}}
-		  </div>
-		{% endfor %}
-	  {% endif %}
-	{% endwith %}
+        <h1>Flash Test Main Page</h1>
+        <h2>Nav Bar and Flash Message Close Button from Bootstrap</h2>
+        <h2>Flash Message Bar from Flask</h2>
 
-    <h1>Flash Test Main Page</h1>
-    <h2>Nav Bar and Flash Message Close Button from Bootstrap</h2>
-    <h2>Flash Message Bar from Flask</h2>
+        {% block body %}{% endblock %}
 
-	{% block body %}{% endblock %}
-	</div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

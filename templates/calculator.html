@@ -1,5 +1,5 @@
 {% extends "basepage.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}Calculator{% endblock %}
 {% block head %}
     {{ super() }}
     <style type="text/css">
@@ -8,14 +8,12 @@
         }
     </style>
 {% endblock %}
+
+
 {% block content %}
 
-    <h1>My Calculator</h1>
-     {% if error %}
-         <div class="alert alert-danger error" role="alert">
-             {{ error }}
-        </div>
-      {% endif %}
+  <h1>My Calculator</h1>
+
   <div class="mb-3 row">
 
     <form action="/calculator" method="POST">
