@@ -1,12 +1,6 @@
-import os
-import time
 from controllers.calculator_controller import CalculatorController
-from history.calculations import Calculations
-from calculator.calculator import Calculator
+from flask import request, flash
 from csv_util.file_utils import Filehandler
-from flask import render_template, request, flash, redirect, url_for, session
-from csv_util.file_utils import Filehandler
-
 
 
 class ResultController:

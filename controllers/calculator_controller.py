@@ -1,8 +1,7 @@
 import time
 from history.calculations import Calculations
 from calculator.calculator import Calculator
-from csv_util.file_utils import Filehandler
-from flask import render_template, request, flash, redirect, url_for, session
+from flask import render_template, request, flash
 from csv_util.file_utils import Filehandler
 
 

@@ -1,8 +1,6 @@
 """This is a class to handle CSV files"""
 import time
 import os
-
-import numpy
 import pandas as pd
 import numpy as np
 from os.path import exists as file_exists

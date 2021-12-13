@@ -7,6 +7,7 @@ app = Flask(__name__)
 app.secret_key = "My_Secret_key"
 app.wsgi_app = DebuggedApplication(app.wsgi_app, True)
 
+
 @app.route('/')
 def flash_test():  # put application's code here
     flash("Welcome to my Flash Test!")

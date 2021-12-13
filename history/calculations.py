@@ -6,6 +6,7 @@ VAL2 = 2
 OPERATION = 3
 RESULT = 4
 
+
 class Calculations:
     """ This is the Calculations class"""
 
