@@ -5,10 +5,14 @@ from csv_util.file_utils import Filehandler
 from flask import render_template, request, flash, redirect, url_for, session
 from csv_util.file_utils import Filehandler
 
+
 class CalculatorController:
     @staticmethod
     def post():
         """ Get data and post values to form """
+        #if request.form['delete_history'] == 'delete_history':
+            #print('delete history')
+
         if request.form['value1'] != '' and request.form['value2'] != '':
             # get the values out of the form
             # todo test for nan
@@ -25,7 +29,7 @@ class CalculatorController:
             Filehandler.write_vals_to_csv([[int(time.time()),value1, value2, operation]])
             # Need the result!!!
             data = Filehandler.get_csv_result_history()
-            print("data: " + str(data))
+            #print("data: " + str(data))
 
             len_data = len(data)
             return render_template('result.html', len_data=len_data, data=data,

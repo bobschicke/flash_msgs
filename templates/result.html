@@ -28,6 +28,12 @@
             width: 10%;
         }
     </style>
+{#    <script>#}
+{#        function w3cValidation() {#}
+{#            window.open("http://validator.w3.org/check?uri=" + window.location.href);#}
+{#        }#}
+{#    </script>#}
+
 {% endblock %}
 {% block content %}
     <h2><strong>Calculation Result</strong></h2>
@@ -66,10 +72,15 @@
     </table>
     </div>
 
+
     <br>
     <br>
+        <form action="/result" method="POST">
+            <input type="submit" name="delete_history" value="delete_history">
+        </form>
     <h2><strong>History of Calculations - {{ len_data }} Entries</strong></h2>
     {% if data %}
+
         <div class="width60">
         <table class="table table-striped table-bordered">
             <thead>
@@ -98,6 +109,7 @@
         </table>
         </div>
     {% endif %}
+
 {% endblock %}
 <br>
 <br>

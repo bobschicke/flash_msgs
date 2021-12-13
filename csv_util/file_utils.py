@@ -154,3 +154,7 @@ class Filehandler:
             temp_list.append(temp_row)
             #temp_list = numpy.append(temp_list, temp_row)
         return temp_list
+
+    @staticmethod
+    def delete_history():
+        os.remove(Filehandler.get_logfile_path())
