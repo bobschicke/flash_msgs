@@ -10,7 +10,7 @@ app.wsgi_app = DebuggedApplication(app.wsgi_app, True)
 
 @app.route('/')
 def flash_test():  # put application's code here
-    flash("Welcome to my Flash Message Demo!............Click on the X to close the message.")
+    flash("Welcome to my Flash Message Demo!.....Click on the X to close the message....Refresh the page to get me back!")
     return render_template("flash_msgs.html")
 
 

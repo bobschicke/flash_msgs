@@ -35,23 +35,17 @@
         .container, .table_title1 {
             box-sizing: border-box;
         }
-        .container {
-            width: 19%;
-        }
-        .table_title1 {
-            width: 79%;
-        }
     </style>
     {#    <script>#}
     {#        function w3cValidation() {#}
     {#            window.open("http://validator.w3.org/check?uri=" + window.location.href);#}
     {#        }#}
     {#    </script>#}
-    <script>
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
+{#    <script>#}
+{#        $(document).ready(function () {#}
+{#            $('[data-toggle="tooltip"]').tooltip();#}
+{#        });#}
+{#    </script>#}
 
 
 {% endblock %}
@@ -93,19 +87,22 @@
             </thead>
         </table>
     </div>
-
-
     <br>
     <br>
 
     <div class="container" id="del_button">
-        <form action="/result" method="POST">
-            <input href="#" type="submit" name="delete_history" value="delete_history" data-toggle="tooltip" data-trigger="hover"
-                  data-placement="top" title="Warning! This will delete the History CSV file!">
-        </form>
-    </div>
-    <div class="table_title1">
-    <h2><strong>History of Calculations - {{ len_data }} Entries</strong></h2>
+        <div class="row">
+            <div class="col-6 table_title1">
+                <h2><strong>History of Calculations - {{ len_data }} Entries</strong></h2>
+            </div>
+
+            <div class="col-1">
+                <form action="/result" method="POST">
+                    <input href="#" type="submit" name="delete_history" value="delete_history" data-toggle="tooltip" data-trigger="hover"
+                          data-placement="top" title="Warning! This will delete the History CSV file!">
+                </form>
+            </div>
+        </div>
     </div>
     {% if data %}
 
