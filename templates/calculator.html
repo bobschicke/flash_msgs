@@ -6,23 +6,35 @@
         .important {
             color: #336699;
         }
+        .input-group {
+            padding-left: 30px;
+        }
+        .page_title {
+            width: 25%;
+            text-align: center;
+            font-size: 3vw;
+            font-family: "sans-serif";
+            color: white;
+        }
     </style>
 {% endblock %}
 
 
 {% block content %}
-
-  <h1>My Calculator</h1>
+    <div class="page_title">
+     <p class="bg-primary">Web Calculator</p>
+    </div>
 
   <div class="input-group mb-3 row">
 
     <form action="/calculator" method="POST">
-        <label for="value1" class="col-sm-2 col-form-label">Value 1:</label><br>
+        <strong><label for="value1" class="col-sm-2 col-form-label">Value 1:</label></strong><br>
         <input type="text" id="value1" name="value1" value="1"><br>
-        <label for="value2" class="col-sm-2 col-form-label">Value 2:</label><br>
-        <input type="text" id="value2" name="value2" value="2"><br>
+        <strong><label for="value2" class="col-sm-2 col-form-label">Value 2:</label></strong><br>
+        <input type="text" id="value2" name="value2" value="2">
+        <br><br>
         <fieldset>
-        <legend>Operation</legend>
+          <legend>Operation</legend>
           <div>
             <input type="radio" name="operation" id="addition" value="add" checked>
             <label for="addition">addition</label>
