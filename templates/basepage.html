@@ -33,8 +33,8 @@
     <style>
         body {
             background-color: #F0F0FF;
-            padding-top: 65px;
-            padding-bottom: 65px;
+            padding-top: 85px;
+            padding-bottom: 85px;
 
         }
 
@@ -56,10 +56,13 @@
                 <a class="nav-link" href="/calculator">Calculator Form</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/internet_history">Internet History</a>
+                <a class="nav-link" href={{ url_for('internet_history_get') }}>Internet History</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href={{ url_for('calc_oop') }}>Calc OOP</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href={{ url_for('calc_oop_grid') }}>Calc OOP Grid</a>
             </li>
         </ul>
     </div>
@@ -100,7 +103,7 @@
                         <a class="nav-link" href="/calculator">Calculator Form</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/internet_history">Internet History</a>
+                        <a class="nav-link" href={{ url_for('internet_history_get') }}>Internet History</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>

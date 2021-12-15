@@ -43,6 +43,14 @@ def result_post():
     print('result_post')
     return ResultController.post()
 
+@app.route('/calc_oop_grid')
+def calc_oop_grid():  # put application's code here
+    return render_template("calc_oop_grid.html")
+
+@app.route('/calc_oop')
+def calc_oop():  # put application's code here
+    return render_template("calc_oop.html")
+
 
 if __name__ == '__main__':
     app.run()
