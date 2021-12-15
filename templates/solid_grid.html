@@ -1,0 +1,219 @@
+{% extends "basepage.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+        .row1 {
+        {#height: 80px;#} margin-bottom: 20px;
+            border: solid;
+            border-color: #007acc;
+            border-width: 5px;
+            background-color: #f2d2d2;
+        }
+
+        .row2 {
+        {#height: 100px;#} border: 5px solid #0400a5;
+            margin-bottom: 20px;
+        }
+
+        .row3 {
+        {#height: 200px;#} border: 5px solid #7451a5;
+            margin-bottom: 20px;
+        }
+
+        .row2 img {
+            height: 300px;
+        }
+
+        .row title {
+            padding-top: 30px;
+            margin-top: 30px;
+        }
+
+        .last {
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .vertical {
+            height: 300px;
+        }
+
+        .horizontal {
+            width: 500px;
+        }
+        .solid {
+            height: 200px;
+            margin-top: 20px;
+        }
+        .square {
+            height: 240px
+        }
+
+        iframe {
+            width: 250px;
+        }
+
+        .heading {
+            background-color: #f2d2d2;
+            margin-bottom: 30px;
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+    <body>
+    <div class="container-fluid">
+        <div class="row heading">
+            {#        <div class="col-1 left_grid bg-transparent text-center"></div>#}
+            <div class="col-12 center_grid heading text-center text"><h1><strong>SOLID Principal for Object Oriented Programming</strong></h1></div>
+            {#        <div class="col-1 right_grid bg-transparent text-center"></div>#}
+        </div>
+        <div class="row title">
+            <div class="col-3 left_grid text-left"><h2><strong>Why SOLID?</strong></h2></div>
+            <div class="col-9 "></div>
+        </div>
+        <div class="row last">
+            <div class="col-3 left_grid bg-primary text-center">
+                <div class="hoverwrap">
+                    <img class="img-responsive solid" src="/static/images/solid.PNG" alt="This is a picture of encapsulation"/>
+                    <div class="hovermsg">Picture by Bob Schicke</div>
+                </div>
+            </div>
+            <div class="col-6 center_grid bg-dark text-light">
+                <div class="sectionText">
+                    The SOLID Principal is a way of designing code so that it is expandable, reusable and maintainable. Too often programmers take the easy way up front by cramming a bunch of functionality in one class and/or one method, and creating an interdependency between classes. This makes it impossible to reuse the code because it does too many things, and will only work for this one project.
+                    <p>
+                    When the SOLID principal is followed, code is easily managed, maintained and expanded. The way this is achieved is to minimize the reliance of one class to another and minimize a method's reliance on other methods or data.
+                    </p>
+                </div>
+            </div>
+            <div class="col-3 right_grid bg-danger text-center">
+                <h3>Uncle Bob's SOLID principles made easy - In Python</h3>
+                <div>
+                    <iframe src="https://www.youtube.com/embed/pTB30aXS77U" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="row title">
+            <div class="col-2 left_grid text-left"><h2><strong>Single Responsibility Principal:</strong></h2></div>
+            <div class="col-7"></div>
+            <div class="col-3 right_grid"><h2>Right Grid Box</h2></div>
+        </div>
+        <div class="row last">
+            <div class="col-9 bg-gradient text-left">
+                <div class="sectionText">
+                    The “S” stands for “Single Responsibility”, however it may also be thought of as "Simple". This means that a class should only contain methods and data that are required to implement one feature. Each method should only contain code to handle a singe aspect of that feature. This way, adding a feature means to add a new class, and adding functionality to that feature means to add a new method. SOLID explicitly forbids adding to a current function or class, which will make the program more complicated and harder to modify or extend.
+                    <p>
+                        In short SOLID means “DO ONE THING!” In our calculator project, our add method just adds the values. It doesn't print them out, doesn't save them to memory.
+                    </p>
+                </div>
+                <div class="hoverwrap">
+                    <img src="/static/images/add_method.png" alt="This is a picture of a add"/>
+                    <div class="hovermsg">Picture by Bob Schicke</div>
+                </div>
+                <div class="sectionText">
+                    <p>
+                        This is a link to the <a href="https://github.com/bobschicke/calc2/blob/calc_refactor/calculator/calculator.py">Calculator Class</a>. There you can see how the "add" method does only one thing.
+                    </p>
+                </div>
+            </div>
+            <div class="col-3 bg-success text-center"><h2>Flash Message Bar from Flask</h2></div>
+        </div>
+        <div class="row title">
+            <div class="col-2 left_grid text-left"><h2><strong>Open/Closed Principal:</strong></h2></div>
+            <div class="col-7"></div>
+            <div class="col-3 right_grid"><h2>Right Grid Box</h2></div>
+        </div>
+        <div class="row last">
+            <div class="col-9 bg-gradient text-left">
+                <div class="sectionText">
+                    The “O” stands for the “Open/Closed” principal. This means that a class or method should be Open to extension and closed to modifications.
+                    The way to do this is to make parent class, which holds the common data and methods, or could even be an abstract class which has no data or methods.
+                    And then the child classes could implement the methods in a custom way or even add methods to fulfill the feature requirements.
+                    But at no time should the base class be modified to add new features.
+                    <p>
+                    An example of this could be a PayProcessing parent class that has child classes that handle different ways to pay, such as credit, debit, paypal. If you wanted to add a new payment type, such as bitcoin, a separate bitcoin class can be added without modifying the PayProcessing class or affecting the other payment types.
+                    </p>
+                </div>
+                <div class="hoverwrap">
+                    <img class="img-responsive square" src="/static/images/open_closed.PNG" alt="This is a picture of open/closed"/>
+                    <div class="hovermsg">Picture by Bob Schicke</div>
+                </div>
+            </div>
+            <div class="col-3 bg-success text-center"><h2>Flash Message Bar from Flask</h2></div>
+        </div>
+        <div class="row title">
+            <div class="col-2 left_grid text-left"><h2><strong>Liskov's Substitution Principal:</strong></h2></div>
+            <div class="col-7"></div>
+            <div class="col-3 right_grid"><h2>Right Grid Box</h2></div>
+        </div>
+        <div class="row last">
+            <div class="col-9 bg-gradient text-left">
+                <div class="sectionText">
+                    The “L” stands for “Liskov's Substitution” principal. In this case, "substitution" means that a parent class should be able to be substituted with the child class. In order to do this, the parameters that the parent class requires should be compatible with the parameters required by all the child classes. In our Calculator project the parent class, Calculation, requires a list of tuples. If one of the Calculation child classes, for example the Addition class requires hex numbers as input and the Subtraction class requires floats, that makes the input requirements incompatible with the base class.
+                </div>
+                <div class="hoverwrap">
+                    <img class="img-responsive horizontal" src="/static/images/liskovs_substitution.PNG" alt="This is a picture of liskovs_substitution"/>
+                    <div class="hovermsg">Picture by Bob Schicke</div>
+                </div>
+                <div class="sectionText">
+                    This is a link to the <a href="https://github.com/bobschicke/calc2/blob/calc_refactor/calc/calculation.py">Calculation Class</a>. The Calculation class is the parent class of all the calculations.
+                    <br>This is a link to the <a href="https://github.com/bobschicke/calc2/blob/calc_refactor/calculator/calculator.py">Calculator Class</a>. The Calculator class has examples of how the children of the Calculation class are instantiated.
+                </div>
+             </div>
+            <div class="col-3 bg-success text-center">
+                <h2>Flash Message Bar from Flask</h2>
+            </div>
+        </div>
+        <div class="row title">
+            <div class="col-2 left_grid text-left"><h2><strong>Interface Segregation Principal:</strong></h2></div>
+            <div class="col-7"></div>
+            <div class="col-3 right_grid"><h2>Right Grid Box</h2></div>
+        </div>
+        <div class="row last">
+            <div class="col-4 left_grid bg-primary text-center">
+                <div class="hoverwrap">
+                    <img class="img-responsive solid" src="/static/images/interface_overload.png" alt="This is a picture of a complicated pocket knife"/>
+                    <div class="hovermsg">Picture by Bob Schicke</div>
+                </div>
+            </div>
+            <div class="col-5 center_grid bg-dark text-light">
+                <div class="sectionText">
+                    The “I” stands for “Interface Segregation” principal. In some instances, not every child class needs to implement all of the methods and data structures of an interface. A good example would be an Animal class. Properties like “beak length”, “tail fin size”, “hair color”, “migration distance”, definitely don't apply to all animals. It would make sense to split the Animal interface into sub-interfaces such as “mammals, fish, reptiles, birds”. That way the mammal is only forced to implement the methods and parameters that apply to mammals and not have interface “overload”.
+                </div>
+            </div>
+            <div class="col-3 bg-success text-center">
+                <h2>Flash Message Bar from Flask</h2>
+            </div>
+        </div>
+        <div class="row title">
+            <div class="col-2 left_grid text-left"><h2><strong>Dependency Inversion Principal:</strong></h2></div>
+            <div class="col-7"></div>
+            <div class="col-3 right_grid"><h2>Right Grid Box</h2></div>
+        </div>
+        <div class="row last">
+            <div class="col-4 left_grid bg-primary text-center">
+                <div class="hoverwrap">
+                    <img class="img-responsive solid" src="/static/images/dependency_inversion.png" alt="This is a picture of Dependency Inversion"/>
+                    <div class="hovermsg">Picture by Bob Schicke</div>
+                </div>
+            </div>
+            <div class="col-5 center_grid bg-dark text-light">
+                <div class="sectionText">
+                    The “D” in solid stands for “Dependency Inversion” principal. This means that high level methods or classes should not depend on the details about methods or classes they use. Both the high level and low level functions should rely on an abstraction. The abstraction is the language that the functions use to communicate. If a politician's Media class has a direct call to a Twitter Feed class, then it is dependent on Twitter and another news feed is not an option. If the interface was abstracted by a generic call to a “send_message(“I Won!!”)”, then this can be used by any media class that abides by this abstraction.
+                </div>
+            </div>
+            <div class="col-3 bg-success text-center">
+                <h2>Flash Message Bar from Flask</h2>
+            </div>
+        </div>
+
+
+    </div>
+    {% block body %}{% endblock %}
+
+
+    </body>
+{% endblock %}

@@ -43,13 +43,25 @@ def result_post():
     print('result_post')
     return ResultController.post()
 
+
 @app.route('/calc_oop_grid')
 def calc_oop_grid():  # put application's code here
     return render_template("calc_oop_grid.html")
 
-@app.route('/calc_oop')
-def calc_oop():  # put application's code here
-    return render_template("calc_oop.html")
+
+@app.route('/aaa_testing_grid')
+def aaa_testing_grid():  # put application's code here
+    return render_template("aaa_testing_grid.html")
+
+
+@app.route('/pylint_oop_grid')
+def pylint_oop_grid():  # put application's code here
+    return render_template("pylint_oop_grid.html")
+
+
+@app.route('/solid_grid')
+def solid_grid():  # put application's code here
+    return render_template("solid_grid.html")
 
 
 if __name__ == '__main__':

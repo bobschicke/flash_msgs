@@ -1,37 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Implementing Pylint</title>
-    <meta name="description" content="Pre-Internet">
-    <!-- COMMENT IN HTML -->
-    <link rel="stylesheet" href="css/style_article.css">
-    <script src="jscript/jscript.js"></script>
-</head>
-<body>
-    <header>
-        <h1>Critical OOP Principals</h1>
-    </header>
-    <menu>
-        <li><a href="index.html">Internet History</a></li>
-        <li><a href="pylint_oop.html">Pylint & OOP</a></li>
-        <li><a href="aaa_testing.html">AAA Testing</a></li>
-        <li><a href="calc_oop.html">Calculator OOP</a></li>
-        <li><a href="solid.html">SOLID</a></li>
-    </menu>
-    <div id="heading">
-        <h2>Implementing Pylint</h2>
-    </div>
-    <div id="wrapper">
-        <main>
-            <section id="section1">
-                <h2>What is Pylint?</h2>
+{% extends "basepage.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+        .row1 {
+        {#height: 80px;#} margin-bottom: 20px;
+            border: solid;
+            border-color: #007acc;
+            border-width: 5px;
+            background-color: #f2d2d2;
+        }
+
+        .row2 {
+        {#height: 100px;#} border: 5px solid #0400a5;
+            margin-bottom: 20px;
+        }
+
+        .row3 {
+        {#height: 200px;#} border: 5px solid #7451a5;
+            margin-bottom: 20px;
+        }
+
+        .row2 img {
+            height: 300px;
+        }
+
+        .row title {
+            padding-top: 30px;
+            margin-top: 30px;
+        }
+
+        .last {
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .vertical {
+            height: 300px;
+        }
+
+        .horizontal {
+            width: 500px;
+        }
+
+        .square {
+            height: 240px
+        }
+
+        iframe {
+            width: 250px;
+        }
+
+        .heading {
+            background-color: #f2d2d2;
+            margin-bottom: 30px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <body>
+    <div class="container-fluid">
+        <div class="row heading">
+            {#        <div class="col-1 left_grid bg-transparent text-center"></div>#}
+            <div class="col-12 center_grid heading text-center text"><h1><strong>Implementing Pylint</strong>
+            </h1></div>
+            {#        <div class="col-1 right_grid bg-transparent text-center"></div>#}
+        </div>
+        <div class="row title">
+            <div class="col-5 left_grid text-left"><h2><strong>What is Pylint?</strong></h2></div>
+            <div class="col-7 "></div>
+        </div>
+        <div class="row last">
+            <div class="col-9 bg-dark text-light">
                 <div class="sectionText">
                     Pylint is a static code checker for python that checks for errors, shows when you stray from a coding standard and looks for code “smells”. A “code smell” is something that “seems” wrong, such as a method that's too long or doesn't have any methods. This is basically a warning that needs to be looked into, however, most times what smells wrong is wrong.
                 </div>
-            </section>
-            <section id="section2">
-                <h2>What Does Pylint Test?</h2>
+            </div>
+            <div class="col-3 right_grid bg-danger text-center">
+                <h3>Pylint Tutorial - Write Cleaner Python</h3>
+                <div>
+                    <iframe src="https://www.youtube.com/embed/fFY5103p5-c" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="row title">
+            <div class="col-5 left_grid text-left"><h2><strong>What Does Pylint Test?</strong></h2></div>
+            <div class="col-4"></div>
+            <div class="col-3 right_grid"><h2>Right Grid Box</h2></div>
+        </div>
+        <div class="row last">
+            <div class="col-9 bg-gradient text-left">
                 <div class="sectionText">
                     The default standard that Pylint checks the code to is PEP8.
                     Some common errors in Pylint are “line-too-long” which means that the line length threshold has been exceeded, “trailing-whitespace” which means there are spaces at the end of a line, “len-as-condition” which means that you shouldn't use “if len(x) > 0:”, you should use “if x:”.
@@ -40,45 +99,52 @@
                         This error message is for a missing docstring (a required comment for a file, class and method). The error message tells you that the error is in the calculator.py file and that it is on line 13, and column 4.
                     </p>
                     <div class="short_pic">
-                        <img src="images/pylint_missing_docstring.PNG" alt="This is a picture of a missing docstring"/>
+                        <img src="/static/images/pylint_missing_docstring.PNG" alt="This is a picture of a missing docstring"/>
                     </div>
 
                 </div>
-            </section>
-            <section id="section3">
-                <h2>How to Configure Against Nuisance Warnings</h2>
-                <div class="sectionLeftText">
-
-                    Pylint errors and warnings are very descriptive and point you to the file, line number and column number. It really couldn't get any easier. That said, sometimes pylint gives warnings for things you are doing on purpose, such as a long comment.
-                </div>
-                <div class="short_pic">
-                        <img src="images/pylint_ltl_error.PNG" alt="This is a picture of a missing docstring"/>
-                </div>
-
-                    <br><br><br>
-                <div class="sectionLeftText">
-                    <p>
-                             The answer to that is to add a directive to disable the warning. For example, if you want to disable the warning for a line that is too long, simply add this command before the offending code:
-                        <br># pylint: disable=line-too-long
-                        <br>
-                    </p>
-                </div>
-                <div class="short_pic">
-                   <img src="images/pylint_error_disable.PNG" alt="This is a picture of a missing docstring"/>
-                </div>
-                <div class="sectionLeftText">
-
-                    <p>
-                        ...and no more error!
-                    </p>
-                    A more global way to disable warnings and errors is to add the error type to the "disable" list in the <a href="https://github.com/bobschicke/calc2/blob/calc_refactor/.pylintrc">pylintrc file</a>.
-                </div>
+            </div>
+            <div class="col-3 right_grid bg-danger text-center">
+                <h3>OOP Terminology</h3>
                 <div>
-                    <img src="images/pylint_disable_list.PNG" alt="This is a picture of a pylint disable list"/>
+                    <iframe src="https://www.youtube.com/embed/zsiCs9_3beo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-            </section>
-            <section id="section4">
-                <h2>Glossary of OOP terms</h2>
+            </div>
+        </div>
+        <div class="row title">
+            <div class="col-5 left_grid text-left"><h2><strong>How to Configure Against Nuisance Warnings</strong></h2></div>
+            <div class="col-4"></div>
+            <div class="col-3 right_grid"><h2>Right Grid Box</h2></div>
+        </div>
+        <div class="row last">
+            <div class="col-9 bg-gradient text-left">
+                <div class="sectionText">
+                    The default standard that Pylint checks the code to is PEP8.
+                    Some common errors in Pylint are “line-too-long” which means that the line length threshold has been exceeded, “trailing-whitespace” which means there are spaces at the end of a line, “len-as-condition” which means that you shouldn't use “if len(x) > 0:”, you should use “if x:”.
+                    Pylint will let you know if you don't have comments in your files, classes and methods.
+                    <p>
+                        This error message is for a missing docstring (a required comment for a file, class and method). The error message tells you that the error is in the calculator.py file and that it is on line 13, and column 4.
+                    </p>
+                    <div class="short_pic">
+                        <img src="/static/images/pylint_missing_docstring.PNG" alt="This is a picture of a missing docstring"/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-3 right_grid bg-danger text-center">
+                <h3>OOP Terminology</h3>
+                <div>
+                    <iframe src="https://www.youtube.com/embed/zsiCs9_3beo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="row title">
+            <div class="col-5 left_grid text-left"><h2><strong>Glossary of OOP terms</strong></h2></div>
+            <div class="col-4"></div>
+            <div class="col-3 right_grid"><h2>Right Grid Box</h2></div>
+        </div>
+        <div class="row last">
+            <div class="col-9 bg-gradient text-left">
                 <div class="sectionText">
                     <p>
                         <b>Factory:</b> A Factory Design Pattern is a way to design your code so that objects are created without exposing the logic to the client. A factory method can create multiple types of objects. It takes an input, and based on the input it creates a type of object.
@@ -136,34 +202,18 @@
                         https://www.youtube.com/watch?v=jCzT9XFZ5bw
                     </p>
                 </div>
-            </section>
-        </main>
-        <aside>
-            <h3>Pylint Tutorial - Write Cleaner Python</h3>
-            <div>
-                <iframe src="https://www.youtube.com/embed/fFY5103p5-c" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-        </aside>
-        <aside>
-            <h3>OOP Terminology</h3>
-            <div>
-                <iframe src="https://www.youtube.com/embed/zsiCs9_3beo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="col-3 right_grid bg-danger text-center">
+                <h3>OOP Terminology</h3>
+                <div>
+                    <iframe src="https://www.youtube.com/embed/zsiCs9_3beo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
-        </aside>
+        </div>
+
     </div>
-    <footer>
-        <span id="Copyright">
-            <a href="https://www.linkedin.com/in/robert-schicke-b42a3670/">Bob Schicke&#169;</a>
-        </span>
-        <span>
-            <a href="https://github.com/bobschicke/internet-history/tree/project2">Website Repository</a>
-        </span>
-        <span>
-            <a href="https://github.com/bobschicke/calc2/tree/calc_refactor">Calculator Repository</a>
-        </span>
-        <span>
-            <button onclick="w3cValidation()">W3C Validation</button>
-        </span>
-    </footer>
-</body>
-</html>
+    {% block body %}{% endblock %}
+
+
+    </body>
+{% endblock %}
