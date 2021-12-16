@@ -14,11 +14,11 @@ def clear_hist():
 def setup_calcs_fixture():
     """ Clears the history in calc_history list """
     addition = Addition((2, 3))
-    Calculations.add_calculation_to_history(addition)
+    Calculations.add_calculation_to_history1(addition)
     addition = Addition((4, 5))
-    Calculations.add_calculation_to_history(addition)
+    Calculations.add_calculation_to_history1(addition)
 
-
+# pylint: disable=unused-argument, redefined-outer-name
 def test_get_last_result(clear_hist, setup_calcs_fixture):
     """ Tests that the function returns the last result in calc_history """
     assert Calculations.get_last_result_in_history() == 9
@@ -41,7 +41,7 @@ def test_get_history(clear_hist, setup_calcs_fixture):
     # clear_hist()
     # get_calc_history
     assert Calculations.count_history() == 2
-    hist_list =  Calculations.get_calc_result_history()
+    hist_list =  Calculations.get_calc_result_history1()
     assert len(hist_list) == 2
     assert  hist_list[0] == 5
     assert hist_list[1] == 9

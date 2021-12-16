@@ -1,14 +1,16 @@
-from controllers.calculator_controller import CalculatorController
+"""This is the Result Controller file"""
 from flask import request, flash
+from controllers.calculator_controller import CalculatorController
 from csv_util.file_utils import Filehandler
 
 
 class ResultController:
+    """This is the Result Controller Class"""
     @staticmethod
     def post():
         """ Get data and post values to form """
         print("post")
-        if request.form['delete_history'] == 'delete_history':
+        if request.form['delete_history'] == 'Delete History File':
             print("Button pressed")
             Filehandler.delete_history()
             flash("The History Has Been Deleted!")
@@ -16,4 +18,5 @@ class ResultController:
 
     @staticmethod
     def get():
-        print("get")
+        """This is the Result Controller get method"""
+        # print("get")

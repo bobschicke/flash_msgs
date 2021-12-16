@@ -1,13 +1,11 @@
 {% extends "basepage.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}AAA Testing{% endblock %}
 {% block head %}
     {{ super() }}
     <style>
         .row1 {
         {#height: 80px;#} margin-bottom: 20px;
-            border: solid;
-            border-color: #007acc;
-            border-width: 5px;
+            border: 5px solid #007acc;
             background-color: #f2d2d2;
         }
 
@@ -117,7 +115,7 @@
         <div class="row title">
             <div class="col-5 left_grid text-left"><h2><strong>What is AAA Pattern?</strong></h2></div>
             <div class="col-4"></div>
-            <div class="col-3 right_grid"><h2>Right Grid Box</h2></div>
+            <div class="col-3 right_grid bg-info"><h2>Right Grid Box</h2></div>
         </div>
         <div class="row last">
             <div class="col-9 bg-gradient text-left">
@@ -160,7 +158,7 @@
                 </div>
 
             </div>
-            <div class="col-3 bg-success text-center"><h2>Flash Message Bar from Flask</h2></div>
+            <div class="col-3 bg-success text-center"><h2>Add extra content in the sidebars.</h2><h5>In the above example the "Arrange" section instantiates variables and assigns values to them. The "Act" section calls the function that we are testing and passes the variables to it and then assigns the return value to result. The "Assert" section checks that the value that was returned e.g. the database values, website status, are what was expected. If they are do not match the expected results then the test will fail. It's important to test often, so you don't get too far down the wrong path. If you code a small section and test it, it will be much easier to debug than if you code for a week and then test it. You should test at least as often as you commit, and it's good to commit a couple times a day. If you follow these practices you will never get too far astray. </h5></div>
         </div>
 
     </div>

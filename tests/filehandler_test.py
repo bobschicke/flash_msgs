@@ -37,10 +37,16 @@ def test_do_calcs_errors():
     assert Filehandler.do_calcs(1, [200,2,0,4,2], Calculator.divide, "Division", "test") == "DivBy0"
     assert len(Filehandler.error_log) == 2
 
-# process_csv(nump_arr, filename : str):
+
 def test_process_csv():
     """This method tests processing the CSV"""
     root_path = get_root_path()
     nump_arr = Filehandler.read_csv(root_path + "/tests/test.csv")
     Filehandler.process_csv(nump_arr, "test.csv")
     assert len(Filehandler.calc_log) == 22
+
+
+def test_get_csv_hist():
+    """This method tests processing the CSV"""
+    temp_list = Filehandler.get_csv_result_history()
+    assert len(temp_list) > 0

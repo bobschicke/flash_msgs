@@ -1,13 +1,11 @@
 {% extends "basepage.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}SOLID{% endblock %}
 {% block head %}
     {{ super() }}
     <style>
         .row1 {
         {#height: 80px;#} margin-bottom: 20px;
-            border: solid;
-            border-color: #007acc;
-            border-width: 5px;
+            border: 5px solid #007acc;
             background-color: #f2d2d2;
         }
 
@@ -99,7 +97,7 @@
         <div class="row title">
             <div class="col-2 left_grid text-left"><h2><strong>Single Responsibility Principal:</strong></h2></div>
             <div class="col-7"></div>
-            <div class="col-3 right_grid"><h2>Right Grid Box</h2></div>
+            <div class="col-3 right_grid"></div>
         </div>
         <div class="row last">
             <div class="col-9 bg-gradient text-left">
@@ -119,12 +117,12 @@
                     </p>
                 </div>
             </div>
-            <div class="col-3 bg-success text-center"><h2>Flash Message Bar from Flask</h2></div>
+            <div class="col-3 bg-success text-center"><h2></h2></div>
         </div>
         <div class="row title">
             <div class="col-2 left_grid text-left"><h2><strong>Open/Closed Principal:</strong></h2></div>
             <div class="col-7"></div>
-            <div class="col-3 right_grid"><h2>Right Grid Box</h2></div>
+            <div class="col-3 right_grid"></div>
         </div>
         <div class="row last">
             <div class="col-9 bg-gradient text-left">
@@ -142,12 +140,12 @@
                     <div class="hovermsg">Picture by Bob Schicke</div>
                 </div>
             </div>
-            <div class="col-3 bg-success text-center"><h2>Flash Message Bar from Flask</h2></div>
+            <div class="col-3 bg-success text-center"></div>
         </div>
         <div class="row title">
             <div class="col-2 left_grid text-left"><h2><strong>Liskov's Substitution Principal:</strong></h2></div>
             <div class="col-7"></div>
-            <div class="col-3 right_grid"><h2>Right Grid Box</h2></div>
+            <div class="col-3 right_grid"></div>
         </div>
         <div class="row last">
             <div class="col-9 bg-gradient text-left">
@@ -163,14 +161,12 @@
                     <br>This is a link to the <a href="https://github.com/bobschicke/calc2/blob/calc_refactor/calculator/calculator.py">Calculator Class</a>. The Calculator class has examples of how the children of the Calculation class are instantiated.
                 </div>
              </div>
-            <div class="col-3 bg-success text-center">
-                <h2>Flash Message Bar from Flask</h2>
-            </div>
+            <div class="col-3 bg-success text-center"></div>
         </div>
         <div class="row title">
             <div class="col-2 left_grid text-left"><h2><strong>Interface Segregation Principal:</strong></h2></div>
             <div class="col-7"></div>
-            <div class="col-3 right_grid"><h2>Right Grid Box</h2></div>
+            <div class="col-3 right_grid"></div>
         </div>
         <div class="row last">
             <div class="col-4 left_grid bg-primary text-center">
@@ -184,14 +180,12 @@
                     The “I” stands for “Interface Segregation” principal. In some instances, not every child class needs to implement all of the methods and data structures of an interface. A good example would be an Animal class. Properties like “beak length”, “tail fin size”, “hair color”, “migration distance”, definitely don't apply to all animals. It would make sense to split the Animal interface into sub-interfaces such as “mammals, fish, reptiles, birds”. That way the mammal is only forced to implement the methods and parameters that apply to mammals and not have interface “overload”.
                 </div>
             </div>
-            <div class="col-3 bg-success text-center">
-                <h2>Flash Message Bar from Flask</h2>
-            </div>
+            <div class="col-3 bg-success text-center"></div>
         </div>
         <div class="row title">
             <div class="col-2 left_grid text-left"><h2><strong>Dependency Inversion Principal:</strong></h2></div>
             <div class="col-7"></div>
-            <div class="col-3 right_grid"><h2>Right Grid Box</h2></div>
+            <div class="col-3 right_grid"></div>
         </div>
         <div class="row last">
             <div class="col-4 left_grid bg-primary text-center">
@@ -205,9 +199,7 @@
                     The “D” in solid stands for “Dependency Inversion” principal. This means that high level methods or classes should not depend on the details about methods or classes they use. Both the high level and low level functions should rely on an abstraction. The abstraction is the language that the functions use to communicate. If a politician's Media class has a direct call to a Twitter Feed class, then it is dependent on Twitter and another news feed is not an option. If the interface was abstracted by a generic call to a “send_message(“I Won!!”)”, then this can be used by any media class that abides by this abstraction.
                 </div>
             </div>
-            <div class="col-3 bg-success text-center">
-                <h2>Flash Message Bar from Flask</h2>
-            </div>
+            <div class="col-3 bg-success text-center"></div>
         </div>
 
 

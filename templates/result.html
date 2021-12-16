@@ -53,16 +53,6 @@
     <div>
     <h2><strong>Calculation Result</strong></h2>
     </div>
-    <!-- Flash Messages -->
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-success" role="alert">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
     <!-- Print Calculation Details and Result -->
     <div class="width50">
         <table class="table">
@@ -81,7 +71,7 @@
             </tr>
             <tr>
                 <th scope="row">Result:</th>
-                <td>{{ value1 }}</td>
+                <td>{{ result }}</td>
             </tr>
 
             </thead>
@@ -98,7 +88,7 @@
 
             <div class="col-1">
                 <form action="/result" method="POST">
-                    <input href="#" type="submit" name="delete_history" value="delete_history" data-toggle="tooltip" data-trigger="hover"
+                    <input href="#" type="submit" name="delete_history" value="Delete History File" data-toggle="tooltip" data-trigger="hover"
                           data-placement="top" title="Warning! This will delete the History CSV file!">
                 </form>
             </div>

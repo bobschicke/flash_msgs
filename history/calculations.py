@@ -13,11 +13,11 @@ class Calculations:
     # calc history will save calculation objects
     calc_history = []
 
-    # @staticmethod
-    # def add_calculation_to_history(calculation):
-    #     """ Adds a calculation object to the history list"""
-    #     Calculations.calc_history.append(calculation)
-    #     return True
+    @staticmethod
+    def add_calculation_to_history1(calculation):
+        """ Adds a calculation object to the history list"""
+        Calculations.calc_history.append(calculation)
+        return True
 
     @staticmethod
     def add_calculation_to_history(utime, val1, val2, operation):
@@ -38,15 +38,16 @@ class Calculations:
     @staticmethod
     def count_history():
         """ Returns the number of calculations """
+        return len(Calculations.calc_history)
 
-    # @staticmethod
-    # def get_calc_result_history():
-    #     """ This returns a list of calculation results from oldest to newest """
-    #     result_list = []
-    #     for item in Calculations.calc_history:
-    #         result_list.append(item.get_result())
-    #         # print (result_list[-1])
-    #     return result_list
+    @staticmethod
+    def get_calc_result_history1():
+        """ This returns a list of calculation results from oldest to newest """
+        result_list = []
+        for item in Calculations.calc_history:
+            result_list.append(item.get_result())
+            # print (result_list[-1])
+        return result_list
 
     @staticmethod
     def get_calc_result_history():
