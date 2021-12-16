@@ -9,5 +9,4 @@ script:
 
 branches:
   only:
-    - main
-    - development
+    - webcalculator
